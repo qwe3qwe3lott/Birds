@@ -1,13 +1,15 @@
 import java.awt.*;
 public class Macaw extends Birds {
+    //переменная имени попугая
     private String name = "Петя";
+    //переменная, отвечающая за количество уже созданных попугаев
     private static int countMacaw = 0;
-
+    //конструктор
     public Macaw() {
         countMacaw++;
         System.out.println("Я попугай № " + countMacaw);
     }
-
+    //конструктор
     public Macaw(String Name) {
         countMacaw++;
         name = Name;
@@ -37,7 +39,7 @@ public class Macaw extends Birds {
     public void dialogPenguin() {
         System.out.println("Привет, пингвин!");
     }
-
+    //персональная отрисовка для попугая
     public void draw(Graphics g) {
         g.setColor(Box.color);
         g.fillOval(Box.ox, Box.oy, BirdsGreatFrame3000.size, BirdsGreatFrame3000.size);

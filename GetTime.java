@@ -2,9 +2,11 @@ import java.util.GregorianCalendar;
 public class GetTime {
 
     static GregorianCalendar gcalendar = new GregorianCalendar();
+    //флаг, принимающий решение о наличии пары в данных момент, основываясь на переменной k
     private boolean f = false;
+    //переменная, отвечающая за проверку проведения хотя бы одной из пар
     private int k = 0;
-
+    //методы, возвращающие различные значения времени
     public static int day() {
         return (gcalendar.get(gcalendar.DAY_OF_WEEK));
     }
@@ -14,7 +16,7 @@ public class GetTime {
     public static int minute() {
         return (gcalendar.get(gcalendar.MINUTE));
     }
-
+    //методы, проверяющие проводится ли конкретная пара в данный момент времени
     private void para1() {
         if (hour() == 9) {
             System.out.println("До конца пары " + (90 - minute()) + " минут");
@@ -24,7 +26,6 @@ public class GetTime {
             k++;
         }
     }
-
     private void para2() {
         if (hour() == 10 && minute() >= 40) {
             System.out.println("До конца пары " + (130 - minute()) + " минут");
@@ -36,7 +37,6 @@ public class GetTime {
             k++;
         }
     }
-
     private void para3() {
         if (hour() == 12 && minute() >= 20) {
             System.out.println("До конца пары " + (110 - minute()) + " минут");
@@ -46,7 +46,6 @@ public class GetTime {
             k++;
         }
     }
-
     private void para4() {
         if (hour() == 14 && minute() >= 30) {
             System.out.println("До конца пары " + (120 - minute()) + " минут");
@@ -56,7 +55,6 @@ public class GetTime {
             k++;
         }
     }
-
     private void para5() {
         if (hour() == 16 && minute() >= 10) {
             System.out.println("До конца пары " + (100 - minute()) + " минут");
@@ -66,6 +64,7 @@ public class GetTime {
             k++;
         }
     }
+    //конструктор
     public void getTime() {
         if (day() == 1) {
             f = true;

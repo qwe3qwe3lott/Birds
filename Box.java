@@ -3,18 +3,25 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
 public class Box {
+    Scanner in = new Scanner(System.in);
+    //саммив с птицами
     ArrayList<Birds> box = new ArrayList<>();
     Random r = new Random();
+    //количество птиц к клетке
     public static int countOfBirds = 0;
+    //переменная, отвечающая за рандомное рапределение приц по полю
     public static int fake;
+    //переменные, отвечающие координаты отрисовки птиц
     public static int ox;
     public static int oy;
+    //переменная, отвечающая за цвет рисующейся в данной момент птицы
     public static Color color;
-    static int constox = 15;
-    static int constoy = 35;
-
+    //отступ от левого края
+    static final int constox = 15;
+    //отптуп сверху
+    static final int constoy = 35;
+    //конструктор
     public Box() {
-        Scanner in = new Scanner(System.in);
         String s;
         for (;true;) {
             System.out.println("Введите единицу для создания попугая, двойку для создания пингвина, тройку для создания воробья, четвёрку для создания дятла, любой другой символ для завершения");
@@ -36,11 +43,13 @@ public class Box {
             }
         }
     }
+    //заставить всех птиц из клетки летать
     public void fly() {
         for (int i = 0; i < box.size(); i++) {
             box.get(i).fly();
         }
     }
+    //отрисовать каждую птицу из клетки
     public void draw(Graphics g) {
         for (int i = 0; i < box.size(); i++) {
             box.get(i).tellTimeis();
@@ -74,6 +83,7 @@ public class Box {
             }
         }
     }
+    //отрисовать рамки прицам на поле
     public void drawcase(Graphics g) {
         Case cases = new Case(g);
     }

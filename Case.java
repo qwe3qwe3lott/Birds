@@ -1,9 +1,12 @@
 import java.awt.*;
 public class Case {
+    //массив, отвечающий за хранения координат рамки и флага, оповещающем о том, что все координаты получены и можно рисовать рамку
     static int[] birdData = new int[5];
+    //переменная оптеделяющая класс птицы на основе массива, содржащего информацию, о распределении птиц на поле(BirdsGreatFrame3000.c)
     static int birdNumber = 0;
+    //переменная отвечающая за цвет рамки, рисуемой в данный момент
     private static Color color;
-
+    //конструктор
     public Case(Graphics g) {
         for (int i = 0; i < 4; i++) {
             birdNumber++;
@@ -11,7 +14,7 @@ public class Case {
             createCase(g);
         }
     }
-
+    //метод, обновляющий переменные, для отрисовки следующей рамки
     private void resetBirdData() {
         birdData[0] = 0;
         birdData[1] = BirdsGreatFrame3000.bx;
@@ -19,7 +22,7 @@ public class Case {
         birdData[3] = BirdsGreatFrame3000.by;
         birdData[4] = 0;
     }
-
+    //метод, выбирающий цвет для рамки на основе переменной, определяющей класс птицы(birdNumber)
     private Color whatColor() {
         if (birdNumber == 1) {
             color = Color.red;
@@ -35,7 +38,7 @@ public class Case {
         }
         return(color);
     }
-
+    //метод, рисующий рамки
     private void createCase(Graphics g) {
         for (int i = 0; i < BirdsGreatFrame3000.bx * BirdsGreatFrame3000.by; i++) {
             if (BirdsGreatFrame3000.c.get(i).equals(birdNumber)) {

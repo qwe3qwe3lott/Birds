@@ -1,19 +1,19 @@
 import java.awt.*;
 public abstract class Birds {
-
+    //конструктор
     public Birds() {
         System.out.println("Я птица");
     }
+    //метод, заставляющий птицу летать
     public void fly() {
         System.out.println("Я летаю!");
     }
-
-
+    //отрисовка птицы
     public void draw(Graphics g) {
         g.setColor(Box.color);
         g.fillOval(Box.ox, Box.oy, BirdsGreatFrame3000.size, BirdsGreatFrame3000.size);
     }
-
+    //Птица сообщает время, при появлении на поле
     public void tellTimeis() {
         if (GetTime.hour() >= 6 && GetTime.hour() < 12) {
             System.out.println("Доброе утро");
